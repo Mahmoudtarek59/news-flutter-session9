@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_peoject/bloc/app_controller/app_controller_cubit.dart';
+import 'package:news_peoject/bloc/new_controller/news_controller_cubit.dart';
 import 'package:news_peoject/shared/style/custom_dark_mode.dart';
 import 'package:news_peoject/shared/style/custom_light-mode.dart';
 import 'package:news_peoject/translations/codegen_loader.g.dart';
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         BlocProvider(
           create: (context) => AppControllerCubit()..cubitInit(),
         ),
+        BlocProvider(create: (context)=>NewsControllerCubit()..getSources()..getTrending()..getSports()),
       ],
       child: BlocBuilder<AppControllerCubit, AppControllerState>(
         builder: (context, state) {
