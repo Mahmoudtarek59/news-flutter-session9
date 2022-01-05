@@ -8,6 +8,7 @@ class NewsListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       shrinkWrap: true,
+        physics: ScrollPhysics(),
         itemCount: news!.length,
         padding: EdgeInsets.all(10.0),
         itemBuilder: (context, index) => Container(
